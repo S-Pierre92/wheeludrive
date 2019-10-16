@@ -11,7 +11,7 @@ public class BonjourBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String            nom;
+    private String nom;
 
     public String getNom() {
         return nom;
