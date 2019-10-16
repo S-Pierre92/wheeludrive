@@ -2,14 +2,11 @@ package com.wheeludrive2.bean;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
-
-
-
-@ManagedBean
-@RequestScoped
+@Named
+@SessionScoped
 public class BonjourBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
