@@ -3,7 +3,7 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src.main"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src.test"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/META-INF"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <property name="context-root" value="wheeludrive2"/>
         <property name="java-output-path" value="/wheeludrive2/build/classes"/>
     </wb-module>
