@@ -14,7 +14,7 @@ public abstract class AbstractManager {
 	
 	protected void prepareEntityManager() throws PropertyException {
 
-		entitymanager = EMF.getEM(this.getDb());
+		entitymanager = EMF.getEM(this.getDb(), this .getPersistenceUnit());
 		entitymanager.getTransaction().begin();
 	}
 
@@ -25,6 +25,5 @@ public abstract class AbstractManager {
 	}
 	
 	protected abstract String getDb();
-	
-	
+	protected abstract String getPersistenceUnit();
 }

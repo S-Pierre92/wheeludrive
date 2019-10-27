@@ -30,7 +30,7 @@ public final class EMF {
     private EMF() {
     }
 
-    private static EntityManagerFactory getInstanceFactory(String database) throws PropertyException {
+    private static EntityManagerFactory getInstanceFactory(String database, String persistanceUntit) throws PropertyException {
 
         if (emfInstance == null) {
 
@@ -43,7 +43,7 @@ public final class EMF {
 			map.put(JDBC_USER , prop.getUser());
 			map.put(JDBC_PASSWORD , prop.getPassword());
 
-            emfInstance = Persistence.createEntityManagerFactory(database,map);
+            emfInstance = Persistence.createEntityManagerFactory(persistanceUntit,map);
 
             return emfInstance;
         }
@@ -51,13 +51,13 @@ public final class EMF {
         return emfInstance;
     }
 
-    public static EntityManagerFactory getEMF(String database) throws PropertyException {
-        return getInstanceFactory(database);
+    public static EntityManagerFactory getEMF(String database, String persistanceUntit) throws PropertyException {
+        return getInstanceFactory(database, persistanceUntit);
     }
 
-    public static EntityManager getEM(String database) throws PropertyException {
+    public static EntityManager getEM(String database, String persistanceUntit) throws PropertyException {
 
-        return getInstanceFactory(database).createEntityManager();
+        return getInstanceFactory(database, persistanceUntit).createEntityManager();
     }
 
     /*

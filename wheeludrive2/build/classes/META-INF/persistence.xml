@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-    <persistence-unit name="test"
+    <persistence-unit name="testUnit"
         transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>com.wheeludrive2.entity.TestManager</class>
@@ -30,34 +30,6 @@
     <persistence-unit name="wheeludrive"
         transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-
-        <class>com.wheeludrive.entity.Abonnement</class>
-        <class>com.wheeludrive.entity.Adresse</class>
-        <class>com.wheeludrive.entity.AdresseUtilisateur</class>
-        <class>com.wheeludrive.entity.Annonce</class>
-        <class>com.wheeludrive.entity.CodePostal</class>
-        <class>com.wheeludrive.entity.Commande</class>
-        <class>com.wheeludrive.entity.Commentaire</class>
-        <class>com.wheeludrive.entity.ContratFormuleAssurance</class>
-        <class>com.wheeludrive.entity.Contrat</class>
-        <class>com.wheeludrive.entity.Couleur</class>
-        <class>com.wheeludrive.entity.Enchere</class>
-        <class>com.wheeludrive.entity.Facture</class>
-        <class>com.wheeludrive.entity.Favoris</class>
-        <class>com.wheeludrive.entity.FormuleAbonnement</class>
-        <class>com.wheeludrive.entity.FormulesAssurance</class>
-        <class>com.wheeludrive.entity.Marque</class>
-        <class>com.wheeludrive.entity.Media</class>
-        <class>com.wheeludrive.entity.Modele</class>
-        <class>com.wheeludrive.entity.Pays</class>
-        <class>com.wheeludrive.entity.Permission</class>
-        <class>com.wheeludrive.entity.PermissionsRole</class>
-        <class>com.wheeludrive.entity.Role</class>
-        <class>com.wheeludrive.entity.TypesContrat</class>
-        <class>com.wheeludrive.entity.Utilisateur</class>
-        <class>com.wheeludrive.entity.Voiture</class>
-        
-        
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
