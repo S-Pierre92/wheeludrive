@@ -1,11 +1,14 @@
 package com.wheeludrive2.test;
 
-
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import com.wheeludrive2.domain.PropertiesManager;
 import com.wheeludrive2.exception.PropertyException;
+import com.wheeludrive2.exception.WheelUDriveException;
+import com.wheeludrive2.tools.EncryptionUtils;
 
 
 
@@ -45,24 +48,29 @@ public class FirstTestClass {
 		System.out.println("ssl:" + prop.getSSl());
 	}
 	
-	
-	/*@Test
-	public void testConnectionAndClose() throws PropertyException {
+	@Test
+	public void testCreateEncryptString(){
 		
-		ConnexionDB db = new ConnexionDB();
+		PropertyConfigurator.configure("resources/META-INF/log4j.properties");
+		String myPassword = "password";
+		String secret = "secret";
 		
+		String encryptPassword;
 		try {
-			db.connexionDB("wheeludrive");
-			System.out.println("Connexion bien établie ;-) ");
-		} catch (MyDBException e) {
-			Assert.fail(e.getMessage());
+			encryptPassword = EncryptionUtils.encrypt(myPassword, secret);
+			System.out.println("encryptPassword: " + encryptPassword);
+			Assertions.assertTrue(EncryptionUtils.decrypt(encryptPassword,secret).equals(myPassword));
+			
+			try {
+				EncryptionUtils.decrypt(encryptPassword,"scrett").equals(myPassword);
+				Assertions.assertTrue(false);
+				
+			}catch (WheelUDriveException e) {
+				Assertions.assertTrue(true);
+			}
+			
+		} catch (WheelUDriveException e) {
+			Assertions.fail(e);
 		}
-		
-		try {
-			db.closeConnexionDB();
-			System.out.println("Connexion bien fermée ;-) ");
-		} catch (MyDBException e) {
-			Assert.fail(e.getMessage());
-		}
-	}*/
+	}
 }

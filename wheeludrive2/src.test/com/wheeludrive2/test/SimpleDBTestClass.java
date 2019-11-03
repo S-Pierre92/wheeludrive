@@ -11,7 +11,7 @@ import com.wheeludrive2.exception.PropertyException;
 public class SimpleDBTestClass {
 	
 	
-	@Test
+	@Test // Pour utiliser ce test, créer un base de donnée "test" et éxécuter le code sql qui se trouve src.test.resources dans votre phpMyAdmin
 	public void testGetUser() throws PropertyException, ClassNotFoundException {
 		
 		int index = 1 ;
